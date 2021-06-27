@@ -23,12 +23,14 @@
                             <tr>Name</tr>
                         </tr>
                     </thread>
-                    <tbody>
-                        @foreach(optional($countries) as $country)
-                            <tr>
-                                <td>{{ $county->name }}</td>
-                            </tr>
-                        @endforeach
+                    <tbody
+                    @if(isset($countries))
+                         @foreach($countries as $country)
+                             <tr>
+                                 <td>{{ $country->name }}</td>
+                             </tr>
+                         @endforeach
+                    @endif
                     </tbody>
                 </table>
         </div>

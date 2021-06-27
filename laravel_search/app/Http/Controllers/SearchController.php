@@ -11,7 +11,7 @@ class SearchController extends Controller
     {
         if (isset($_GET['query'])){
             $search_text = $_GET['query'];
-            $countries = DB::table('countries')->where('name', 'LIKE', '%'.$search_text.'%');
+            $countries = DB::table('countries')->where('name', 'LIKE', '%'.$search_text.'%')->get();
             return view('search', ['countries' => $countries]);
         } else {
             return view('search');
